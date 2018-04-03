@@ -1,7 +1,5 @@
 def swap(val1, val2):
-    temp = val1
-    val1 = val2
-    val2 = temp
+    val1, val2 = val2, val1
 
 def max_heapify(alist,i):
     l= i
@@ -21,7 +19,7 @@ def max_heapify(alist,i):
 
 def build_max_heap(alist):
     heap_size = len(alist)
-    for i in range(len((alist/2)-1, 0)):
+    for i in range((len(alist)//2)-1, 0):
         max_heapify(alist,i)
 
 def heap_sort(alist):
@@ -30,4 +28,8 @@ def heap_sort(alist):
         swap(alist[0],alist[i])
         max_heapify(alist,0)
 
-heap_sort([2,5,2,6,0,6,5,3,7,4,62])
+    return alist
+
+arr = [2,57,23,61,0,6,5,3,7,4,62]
+
+print(heap_sort(arr))
